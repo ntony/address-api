@@ -26,7 +26,7 @@ public class Country extends AbstractEntity{
 
     private final Alpha3Code alpha3Code;
 
-    private final Currency currency;
+    //private final Currency currency;
 
     private final Continent continent;
 
@@ -38,6 +38,6 @@ public class Country extends AbstractEntity{
     private final Point location;
 
     protected Country(){
-        this(null, null, null, null, null, null, null, null);
+        this(null, null, null, null, null, null, null);
     }
 }

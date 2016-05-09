@@ -7,4 +7,5 @@ import org.springframework.data.repository.PagingAndSortingRepository;
  * @since 29/03/16
  */
 public interface ProvinceRepository extends PagingAndSortingRepository<Province, String> {
+    public Province findByAdmin1Code(Integer admin1Code);
 }

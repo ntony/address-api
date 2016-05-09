@@ -30,7 +30,7 @@ public class Zip extends AbstractEntity{
 
     private final String adminName2;
 
-    private final Integer adminCode2;
+    private final String adminCode2;
 
     private final String adminName3;
 

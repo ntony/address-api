@@ -1,0 +1,9 @@
+geonames:
+  sample:
+    file: nl_data.csv
+  zip:
+    file: nl_zip.csv
+spring:
+  batch:
+    job:
+      enabled: false

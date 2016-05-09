@@ -7,4 +7,5 @@ import org.springframework.data.repository.PagingAndSortingRepository;
  * @since 29/03/16
  */
 public interface CountyRepository extends PagingAndSortingRepository<County, String> {
+    public County findByFeatureCodeAndAdmin2Code(String featureCode, String admin2Code);
 }

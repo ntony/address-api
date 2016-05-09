@@ -22,7 +22,7 @@ public class Address extends AbstractEntity{
     private final Set<String> labels = new HashSet<>();
 
     private final String block;
-    private final String building;
+    private final String premise;
     private final String street;
 
     @DBRef
@@ -33,13 +33,13 @@ public class Address extends AbstractEntity{
     @GeoSpatialIndexed(type = GeoSpatialIndexType.GEO_2DSPHERE)
     private final Point location;
 
-    public Address(String reference, Type type, Collection<String> labels, String block, String building, String street, Zone zone, Zip zip, Point location){
+    public Address(String reference, Type type, Collection<String> labels, String block, String premise, String street, Zone zone, Zip zip, Point location){
         this.reference = reference == null ? UUID.randomUUID().toString() : reference;
         this.type = type == null ? Type.Home : type;
         this.labels.addAll(labels == null ? Collections.emptyList() : labels);
 
         this.block = block;
-        this.building = building;
+        this.premise = premise;
         this.street = street;
 
         this.zone = zone;

@@ -7,4 +7,5 @@ import org.springframework.data.repository.PagingAndSortingRepository;
  * @since 29/03/16
  */
 public interface CountryRepository extends PagingAndSortingRepository<Country, String> {
+    public Country findByAlpha2Code(Alpha2Code alpha2Code);
 }
