@@ -1,9 +1,10 @@
 package com.vw.address.sample.imp;
 
-import com.vw.address.Zip;
+import com.vw.address.*;
 import com.vw.address.sample.SampleZipData;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.batch.item.ItemProcessor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.geo.Point;
 import org.springframework.stereotype.Component;
 
@@ -15,18 +16,28 @@ import org.springframework.stereotype.Component;
 @Component
 public class ZipProcessor implements ItemProcessor<SampleZipData, Zip> {
 
+    @Autowired
+    private CountryRepository countryRepository;
+
+    @Autowired
+    private ProvinceRepository provinceRepository;
+
+    @Autowired
+    private CountyRepository countyRepository;
+
     @Override
     public Zip process(SampleZipData item) throws Exception {
+
+        Country country = countryRepository.findByAlpha2Code(new Alpha2Code(item.getCountryCode()));
+        Province province = provinceRepository.findByName(item.getAdminName1());
+        County county = countyRepository.findByName(item.getAdminName2());
+
         return new Zip(
                 item.getPostalCode(),
-                item.getCountryCode(),
+                country,
                 item.getPlaceName(),
-                item.getAdminName1(),
-                item.getAdminCode1(),
-                item.getAdminName2(),
-                item.getAdminCode2(),
-                item.getAdminName3(),
-                item.getAdminCode3(),
+                province,
+                county,
                 new Point(Double.valueOf(item.getLongitude()), Double.valueOf(item.getLatitude())),
                 item.getAccuracy()
         );

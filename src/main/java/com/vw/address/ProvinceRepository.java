@@ -1,6 +1,7 @@
 package com.vw.address;
 
 import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.data.repository.query.Param;
 
 /**
  * @author ffazil
@@ -8,4 +9,5 @@ import org.springframework.data.repository.PagingAndSortingRepository;
  */
 public interface ProvinceRepository extends PagingAndSortingRepository<Province, String> {
     public Province findByAdmin1Code(Integer admin1Code);
+    public Province findByName(@Param("name") String name);
 }

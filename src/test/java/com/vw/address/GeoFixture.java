@@ -50,14 +50,10 @@ public class GeoFixture {
 
     public static Zip standardZip(){
         return new Zip("560102",
-                "IN",
+                new Country(),
                 "Sarjapur road",
-                "test",
-                19,
-                "test",
-                "19",
-                "test",
-                19,
+                new Province(),
+                new County(),
                 new Point(0.0, 0.0),
                 3);
     }
