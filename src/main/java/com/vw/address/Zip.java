@@ -22,15 +22,7 @@ public class Zip extends AbstractEntity{
     private final String postalCode;
 
     @DBRef
-    private final Country country;
-
-    private final String placeName;
-
-    @DBRef
-    private final Province province;
-
-    @DBRef
-    private final County county;
+    private final Zone zone;
 
     @GeoSpatialIndexed(type = GeoSpatialIndexType.GEO_2DSPHERE)
     private final Point location;
@@ -39,7 +31,7 @@ public class Zip extends AbstractEntity{
 
 
     protected Zip(){
-        this(null, null, null, null, null, null, null);
+        this(null, null, null, null);
     }
 
 }

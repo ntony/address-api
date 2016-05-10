@@ -4,12 +4,14 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.springframework.data.geo.Point;
 import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  * @author ffazil
  * @since 01/03/16
  */
 @Data
+@Document
 @AllArgsConstructor
 public class Zone extends AbstractEntity {
 

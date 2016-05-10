@@ -29,7 +29,7 @@ public class ProvinceProcessor implements ItemProcessor<SampleData, Province> {
 
             return new Province(
                     item.getAsciiName(),
-                    new Point(Double.valueOf(item.getLatitude()), Double.valueOf(item.getLongitude())),
+                    new Point(Double.valueOf(item.getLongitude()), Double.valueOf(item.getLatitude())),
                     new Double(item.getPopulation().toString()),
                     item.getFeatureCode(),
                     item.getAdmin1Code(),

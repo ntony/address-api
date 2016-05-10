@@ -29,7 +29,7 @@ public class CountyProcessor implements ItemProcessor<SampleData, County> {
             return new County(
                     item.getAsciiName(),
                     new Double(item.getPopulation().toString()),
-                    new Point(Double.valueOf(item.getLatitude()), Double.valueOf(item.getLongitude())),
+                    new Point(Double.valueOf(item.getLongitude()), Double.valueOf(item.getLatitude())),
                     item.getFeatureCode(),
                     item.getAdmin1Code(),
                     item.getAdmin2Code(),

@@ -36,7 +36,7 @@ public class ZoneProcessor implements ItemProcessor<SampleData, Zone> {
             return new Zone(
                     item.getAsciiName(),
                     new Double(item.getPopulation().toString()),
-                    new Point(Double.valueOf(item.getLatitude()), Double.valueOf(item.getLongitude())),
+                    new Point(Double.valueOf(item.getLongitude()), Double.valueOf(item.getLatitude())),
                     county
             );
         }

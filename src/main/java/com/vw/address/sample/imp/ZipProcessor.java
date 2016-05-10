@@ -25,19 +25,17 @@ public class ZipProcessor implements ItemProcessor<SampleZipData, Zip> {
     @Autowired
     private CountyRepository countyRepository;
 
+    @Autowired
+    private ZoneRepository zoneRepository;
+
     @Override
     public Zip process(SampleZipData item) throws Exception {
 
-        Country country = countryRepository.findByAlpha2Code(new Alpha2Code(item.getCountryCode()));
-        Province province = provinceRepository.findByName(item.getAdminName1());
-        County county = countyRepository.findByName(item.getAdminName2());
+        Zone zone = zoneRepository.findByName(item.getPlaceName());
 
         return new Zip(
                 item.getPostalCode(),
-                country,
-                item.getPlaceName(),
-                province,
-                county,
+                zone,
                 new Point(Double.valueOf(item.getLongitude()), Double.valueOf(item.getLatitude())),
                 item.getAccuracy()
         );

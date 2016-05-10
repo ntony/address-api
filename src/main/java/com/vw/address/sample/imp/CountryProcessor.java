@@ -26,10 +26,10 @@ public class CountryProcessor implements ItemProcessor<SampleData, Country>{
             return new Country(item.getAsciiName(),
                     new Alpha2Code(item.getAlpha2Code()),
                     new Alpha3Code(item.getAlpha2Code()),
-                    Continent.Asia,
+                    Continent.Europe,
                     new Double(0),
                     new Double(item.getPopulation().toString()),
-                    new Point(Double.valueOf(item.getLatitude()), Double.valueOf(item.getLongitude())));
+                    new Point(Double.valueOf(item.getLongitude()), Double.valueOf(item.getLatitude())));
         }
 
         return null;
